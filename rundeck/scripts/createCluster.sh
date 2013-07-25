@@ -1,9 +1,13 @@
 #!/bin/bash
 
 RUNDECK_HOME=/home/tudor/Tools/rundeck/
-PATH=${PATH}:${RUNDECK_HOME}tools/bin
+PROVISIONR_HOME=/home/tudor/repos/incubator-provisionr/karaf/assembly/target/org.apache.provisionr-0.4.0-incubating-SNAPSHOT/
+
 HDD_SIZE=25
-PROVISIONR_PATH=/home/tudor/repos/incubator-provisionr/karaf/assembly/target/org.apache.provisionr-0.4.0-incubating-SNAPSHOT/bin/
+PATH=${PATH}:${RUNDECK_HOME}tools/bin
+PROVISIONR_PATH=${PROVISIONR_HOME}bin/
+
+# use -s for the number of shards and -m for the number of mongos instances
 
 while getopts s:m: option
 do
