@@ -1,0 +1,23 @@
+<joblist>
+  <job>
+    <id>ea540733-79e8-4729-8507-7dddc65b2724</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='step-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/1.createShards/createShards.sh</scripturl>
+        <scriptargs>${option.SHARDS_NUMBER} ${option.HDD_SIZE} ${option.PROVISIONR_PATH}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>1-createShards</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+      <options>
+        <option name='HDD_SIZE' value='25' />
+        <option name='PROVISIONR_PATH' value='/home/tudor/repos/incubator-provisionr/karaf/assembly/target/org.apache.provisionr-0.4.0-incubating-SNAPSHOT/bin/' />
+        <option name='SHARDS_NUMBER' value='3' />
+      </options>
+    </context>
+    <uuid>ea540733-79e8-4729-8507-7dddc65b2724</uuid>
+  </job>
+</joblist>

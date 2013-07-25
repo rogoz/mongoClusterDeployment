@@ -1,0 +1,22 @@
+<joblist>
+  <job>
+    <id>43c95c58-0127-47e3-8cce-8c5f2ced9efa</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='step-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/3.createMongos/createMongos.sh</scripturl>
+        <scriptargs>${option.MONGOS_NUMBER} ${option.PROVISIONR_PATH}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>3-createMongos</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+      <options>
+        <option name='MONGOS_NUMBER' value='3' />
+        <option name='PROVISIONR_PATH' value='/home/tudor/repos/incubator-provisionr/karaf/assembly/target/org.apache.provisionr-0.4.0-incubating-SNAPSHOT/bin/' />
+      </options>
+    </context>
+    <uuid>43c95c58-0127-47e3-8cce-8c5f2ced9efa</uuid>
+  </job>
+</joblist>

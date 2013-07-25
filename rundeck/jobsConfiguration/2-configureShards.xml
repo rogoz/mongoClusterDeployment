@@ -1,0 +1,29 @@
+<joblist>
+  <job>
+    <id>ef78d10d-c848-44dd-a47a-f226c22be043</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='step-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/2.configureShards/configureShards.sh</scripturl>
+        <scriptargs />
+      </command>
+    </sequence>
+    <description></description>
+    <name>2-configureShards</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+    </context>
+    <dispatch>
+      <threadcount>15</threadcount>
+      <keepgoing>false</keepgoing>
+      <excludePrecedence>true</excludePrecedence>
+      <rankOrder>ascending</rankOrder>
+    </dispatch>
+    <uuid>ef78d10d-c848-44dd-a47a-f226c22be043</uuid>
+    <nodefilters>
+      <exclude>
+        <os-family>unix</os-family>
+      </exclude>
+    </nodefilters>
+  </job>
+</joblist>

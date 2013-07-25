@@ -1,0 +1,33 @@
+<joblist>
+  <job>
+    <id>74c7f590-b468-47e5-9269-2ef435e20305</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/4.configureMongos/configureMongos1.sh</scripturl>
+        <scriptargs />
+      </command>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/4.configureMongos/configureMongos2.sh</scripturl>
+        <scriptargs>${node.hostname}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>4-configureMongos</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+    </context>
+    <dispatch>
+      <threadcount>15</threadcount>
+      <keepgoing>false</keepgoing>
+      <excludePrecedence>true</excludePrecedence>
+      <rankOrder>ascending</rankOrder>
+    </dispatch>
+    <uuid>74c7f590-b468-47e5-9269-2ef435e20305</uuid>
+    <nodefilters>
+      <exclude>
+        <os-family>unix</os-family>
+      </exclude>
+    </nodefilters>
+  </job>
+</joblist>
