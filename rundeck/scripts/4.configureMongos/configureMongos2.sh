@@ -14,7 +14,7 @@ declare -a shards=($TEMP)
  
 function retry {
    nTrys=0
-   maxTrys=10
+   maxTrys=25
    status=256
    until [ $status == 0 ] ; do
       echo Running command $1
