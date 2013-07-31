@@ -77,7 +77,7 @@ sudo killall -v mongod
 
 # configure mongod file
 echo $MONGOD_LOG_PATH | sudo tee /etc/mongod.conf
-echo $MONGOD_PORT | sudo tee /etc/mongod.conf
+echo $MONGOD_PORT | sudo tee -a /etc/mongod.conf
 echo $MONGOD_APPEND_LOG | sudo tee -a /etc/mongod.conf
 echo $MONGOD_FORK | sudo tee -a /etc/mongod.conf
 echo $MONGOD_DBPATH | sudo tee -a /etc/mongod.conf
