@@ -8,7 +8,7 @@ MONGOD_LOG_PATH="logpath=/log/mongod.log"
 MONGOD_APPEND_LOG="logappend=true"
 MONGOD_FORK="fork=true"
 MONGOD_DBPATH="dbpath=/data"
-MONGOD_SHARD="shardsvr = true"
+MONGOD_SHARD="shardsvr=true"
 
 
 function retry {
@@ -83,7 +83,7 @@ echo $MONGOD_DBPATH | sudo tee -a /etc/mongod.conf
 echo $MONGOD_SHARD | sudo tee -a /etc/mongod.conf
 
 # start mongod node
-sudo nohup mongod >& /dev/null &
+sudo nohup mongod --config /etc/mongod.conf >& /dev/null &
 
 # start config node
 sudo mkdir ~/config/
