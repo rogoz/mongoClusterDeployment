@@ -9,7 +9,7 @@ MONGOD_APPEND_LOG="logappend=true"
 MONGOD_FORK="fork=true"
 MONGOD_DBPATH="dbpath=/data"
 MONGOD_SHARD="shardsvr=true"
-
+MONGOD_PORT="port=27017"
 
 function retry {
    nTrys=0
@@ -77,6 +77,7 @@ sudo killall -v mongod
 
 # configure mongod file
 echo $MONGOD_LOG_PATH | sudo tee /etc/mongod.conf
+echo $MONGOD_PORT | sudo tee /etc/mongod.conf
 echo $MONGOD_APPEND_LOG | sudo tee -a /etc/mongod.conf
 echo $MONGOD_FORK | sudo tee -a /etc/mongod.conf
 echo $MONGOD_DBPATH | sudo tee -a /etc/mongod.conf
