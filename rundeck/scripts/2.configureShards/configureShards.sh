@@ -46,9 +46,9 @@ sudo dd if=/dev/zero of=/dev/md0 bs=512 count=1
 sudo pvcreate /dev/md0
 sudo vgcreate vg0 /dev/md0
 
-sudo lvcreate -l 80%vg -n data vg0
+sudo lvcreate -l 70%vg -n data vg0
 sudo lvcreate -l 5%vg -n log vg0
-sudo lvcreate -l 15%vg -n journal vg0
+sudo lvcreate -l 25%vg -n journal vg0
 
 sudo mke2fs -t ext4 -F /dev/vg0/data
 sudo mke2fs -t ext4 -F /dev/vg0/log
