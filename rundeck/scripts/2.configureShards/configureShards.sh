@@ -84,11 +84,11 @@ echo $MONGOD_DBPATH | sudo tee -a /etc/mongod.conf
 echo $MONGOD_SHARD | sudo tee -a /etc/mongod.conf
 
 # start mongod node
-sudo nohup mongod --config /etc/mongod.conf >& /dev/null &
+sudo mongod --config /etc/mongod.conf >& /dev/null &
 
 # start config node
-sudo mkdir ~/config/
-sudo nohup mongod --configsvr --port 20001 --dbpath=config --logpath config/config.log >& /dev/null &
+sudo mkdir /data/config
+sudo mongod --configsvr --port 20001 --dbpath=/data/config --logpath /data/config/config.log --fork >& /dev/null &
 sleep 60
 
 # tests if the shards were properly created
