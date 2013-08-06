@@ -37,7 +37,16 @@ retry "${TEST_COMMAND}"
  
 # configure the cluster from the main platform 
 if [ "$CURRENT_NODE" == "$MONGOS_MAIN" ]; then 
+
 	echo MONGOS $MONGOS_MAIN starting to configure the shards 
+	# drop Oak databases on each shard
+	for shard in "${shards[@]}" 
+	do
+	  shard_trim=`echo $shard|tr -d ''\'''` 
+	  mongo --host $shard_trim Oak --port $MONGOD_PORT --eval "db.dropDatabase()"
+	  sleep 2 
+	done
+
 	for shard in "${shards[@]}" 
 	do 
 	  shard_trim=`echo $shard|tr -d ''\'''` 
@@ -46,24 +55,6 @@ if [ "$CURRENT_NODE" == "$MONGOS_MAIN" ]; then
 	  sleep 2 
 	done 
 
-	# check the shards first
-	for shard in "${shards[@]}" 
-	do
-	  shard_trim=`echo $shard|tr -d ''\'''` 
-	  mongo --host $shard_trim Oak --port $MONGOD_PORT --eval "db.createCollection(\"nodes\")"
-          mongo --host $shard_trim Oak --port $MONGOD_PORT --eval "for (var i = 1; i <= 10000; i++) db.nodes.insert( { x : i } )" 
-	  sleep 2 
-	done 	
-	
-	# drop Oak databases on each shard
-	
-	for shard in "${shards[@]}" 
-	do
-	  shard_trim=`echo $shard|tr -d ''\'''` 
-	  mongo --host $shard_trim Oak --port $MONGOD_PORT --eval "db.dropDatabase()"
-	  sleep 2 
-	done 	
-	
 	# Set sharding key for nodes and blobs on the mongos platform
 	mongo --host localhost $DATABASE_NAME --port $MONGOS_PORT --eval "db.createCollection(\"nodes\")"
 	mongo --host localhost $DATABASE_NAME --port $MONGOS_PORT --eval "db.createCollection(\"blobs\")"
