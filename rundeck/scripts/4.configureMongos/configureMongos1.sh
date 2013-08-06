@@ -3,7 +3,7 @@
 # Configure the mongos stations.Starts the mongos process on each platform.The script must run on each mongos platform. 
  
 LOG_DIR=/home/${USER}/MONGOS 
-CONFIG_PORT=20001 
+CONFIG_PORT=50001 
 MONGOS_PORT=27017 
 PROVISIONR_HOST=localhost  
 PROVISIONR_PORT=8181  

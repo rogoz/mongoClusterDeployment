@@ -88,7 +88,7 @@ sudo mongod --config /etc/mongod.conf >& /dev/null &
 
 # start config node
 sudo mkdir /data/config
-sudo mongod --configsvr --port 20001 --dbpath=/data/config --logpath /data/config/config.log --fork >& /dev/null &
+sudo mongod --configsvr --port 50001 --dbpath=/data/config --logpath /data/config/config.log --fork >& /dev/null &
 sleep 60
 
 # tests if the shards were properly created
