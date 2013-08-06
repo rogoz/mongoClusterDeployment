@@ -42,4 +42,5 @@ done
 # open the ports between shards and mongos
 echo "Authorize communication between security groups -> network-${MONGOS_KEY}(mongos) and network-${SHARDS_KEY} (shards)"
 ec2-authorize network-${SHARDS_KEY} -o network-${MONGOS_KEY} -u $AWS_ACCOUNT_NUMBER
+ec2-authorize network-${SHARDS_KEY} -o network-${SHARDS_KEY} -u $AWS_ACCOUNT_NUMBER
 ec2-authorize network-${MONGOS_KEY} -o network-${SHARDS_KEY} -u $AWS_ACCOUNT_NUMBER
