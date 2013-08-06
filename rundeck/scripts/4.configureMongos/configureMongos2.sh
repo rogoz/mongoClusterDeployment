@@ -45,8 +45,25 @@ if [ "$CURRENT_NODE" == "$MONGOS_MAIN" ]; then
 	  mongo --host localhost admin --port $MONGOS_PORT --eval "sh.addShard(\"${shard_trim}:${MONGOD_PORT}\")" 
 	  sleep 2 
 	done 
-
-	# Set sharding key for nodes and blobs 
+	# check the shards first
+	for shard in "${shards[@]}" 
+	do
+	  shard_trim=`echo $shard|tr -d ''\'''` 
+	  mongo --host $shard_trim Oak --port $MONGOD_PORT --eval "db.createCollection(\"nodes\")"
+          mongo --host $shard_trim Oak --port $MONGOD_PORT --eval "for (var i = 1; i <= 10000; i++) db.nodes.insert( { x : i } ))" 
+	  sleep 2 
+	done 	
+	
+	# drop Oak databases on each shard
+	
+	for shard in "${shards[@]}" 
+	do
+	  shard_trim=`echo $shard|tr -d ''\'''` 
+	  mongo --host $shard_trim Oak --port $MONGOD_PORT --eval "db.dropDatabase()"
+	  sleep 2 
+	done 	
+	
+	# Set sharding key for nodes and blobs on the mongos platform
 	mongo --host localhost $DATABASE_NAME --port $MONGOS_PORT --eval "db.createCollection(\"nodes\")"
 	mongo --host localhost $DATABASE_NAME --port $MONGOS_PORT --eval "db.createCollection(\"blobs\")"
         echo "Enable sharding"
