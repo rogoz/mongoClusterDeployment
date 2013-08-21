@@ -1,0 +1,29 @@
+<joblist>
+  <job>
+    <id>d854c34f-1731-422f-8ca5-5e3a1860d65c</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/oak-testing/master/oak-performance/src/main/resources/scripts/startTests/collectTestResults.sh</scripturl>
+        <scriptargs>${node.hostname}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>b-generateOakResults</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+    </context>
+    <dispatch>
+      <threadcount>15</threadcount>
+      <keepgoing>false</keepgoing>
+      <excludePrecedence>true</excludePrecedence>
+      <rankOrder>ascending</rankOrder>
+    </dispatch>
+    <uuid>d854c34f-1731-422f-8ca5-5e3a1860d65c</uuid>
+    <nodefilters>
+      <exclude>
+        <os-family>unix</os-family>
+      </exclude>
+    </nodefilters>
+  </job>
+</joblist>

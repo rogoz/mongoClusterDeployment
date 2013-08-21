@@ -1,0 +1,29 @@
+<joblist>
+  <job>
+    <id>b077251a-7a11-4299-9c0d-5cf8dcd3b9e8</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/oak-testing/master/oak-performance/src/main/resources/scripts/cleanCollections/cleanCollections.sh</scripturl>
+        <scriptargs>${node.hostname}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>x-cleanCollections</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+    </context>
+    <dispatch>
+      <threadcount>15</threadcount>
+      <keepgoing>false</keepgoing>
+      <excludePrecedence>true</excludePrecedence>
+      <rankOrder>ascending</rankOrder>
+    </dispatch>
+    <uuid>b077251a-7a11-4299-9c0d-5cf8dcd3b9e8</uuid>
+    <nodefilters>
+      <exclude>
+        <os-family>unix</os-family>
+      </exclude>
+    </nodefilters>
+  </job>
+</joblist>

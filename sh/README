@@ -1,0 +1,39 @@
+The application can create mongo clusters in amazon cloud.
+
+Prerequisites
+-------------
+1/ libxml2-utils package installed (on ubuntu distribution, on other linux distributions can have another name).On mac os it should be installed by default.You can run "xmllint --version" command to check if the tool is installed.
+2/ wget tool installed
+3/ a valid Amazon EC2 account
+4/ Ports 4440, 8181 must be free.
+
+The app is compatible with ubuntu distribution (maybe other linux distributions too, not tested yet) and mac Os.
+
+Installation
+-------------
+
+1/Launch install.sh script.
+2/Configure the AWS credentials in org.apache.provisionr-04.0-incubating-SNAPSHOT/org.apache.provisionr.amazon.cfg
+
+Usage
+-------------
+
+For launching the app launch startServers.sh script.
+For stopping the app execute stopServers.sh.
+
+For creating a cluster in amazon use the createCluster.sh script as bellow:
+Example: ./createCluster.sh -s 3 -m 2 (will create a cluster with 3 shards and 2 mongos platforms)
+
+For destroying the cluster execute destroyCluster.sh script.
+Example: ./destroyCluster.sh (will destroy the current cluster)
+
+Use clusterStatus.sh for printing the cluster details (like IPs).
+
+You can have only one cluster.The app cannot manage multiple clusters in the same time.
+
+Please contact Tudor Rogoz (rogoz@adobe.com) if you need any help.
+
+
+
+
+

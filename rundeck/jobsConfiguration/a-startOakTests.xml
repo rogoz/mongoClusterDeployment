@@ -1,0 +1,33 @@
+<joblist>
+  <job>
+    <id>60dd6add-781b-4082-9c09-5dceaa049f57</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/oak-testing/master/oak-performance/src/main/resources/scripts/startTests/startOakTests.sh</scripturl>
+        <scriptargs>${node.hostname} ${option.TEST_NAME} ${option.OAK_TYPE}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>a-startOakTests</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+      <options>
+        <option name='OAK_TYPE' value='mongomk' />
+        <option name='TEST_NAME' value='OAKTest#testFlatStructure' />
+      </options>
+    </context>
+    <dispatch>
+      <threadcount>15</threadcount>
+      <keepgoing>false</keepgoing>
+      <excludePrecedence>true</excludePrecedence>
+      <rankOrder>ascending</rankOrder>
+    </dispatch>
+    <uuid>60dd6add-781b-4082-9c09-5dceaa049f57</uuid>
+    <nodefilters>
+      <exclude>
+        <os-family>unix</os-family>
+      </exclude>
+    </nodefilters>
+  </job>
+</joblist>

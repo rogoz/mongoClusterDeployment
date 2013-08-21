@@ -1,0 +1,21 @@
+<joblist>
+  <job>
+    <id>6b84c417-7e34-4039-8876-caf50e0bbc4a</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='step-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/oak-testing/master/oak-performance/src/main/resources/scripts/startTests/getResultsToHost.sh</scripturl>
+        <scriptargs>${option.OUTPUT_DIR}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>c-getResultsOnLocal</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+      <options>
+        <option name='OUTPUT_DIR' value='output' />
+      </options>
+    </context>
+    <uuid>6b84c417-7e34-4039-8876-caf50e0bbc4a</uuid>
+  </job>
+</joblist>
