@@ -9,6 +9,7 @@ MONGOS_MAIN_PLATFORM=`xmllint --xpath 'string(/project/node[1]/@hostname)' mongo
 
 
 # Download and set Java  
+
 export JAVA_HOME=/home/${USER}/jdk1.6.0_33/
 export PATH=${JAVA_HOME}bin:$PATH
 
