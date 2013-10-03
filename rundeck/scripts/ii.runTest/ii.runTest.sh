@@ -20,7 +20,7 @@ export PATH=${JAVA_HOME}bin:$PATH
 
 echo ${mongos[@]}|grep ${CURRENT_NODE}
 STATUS=$?
-if [ "$STATUS" -e "0" ]; then 
+if [ "$STATUS" -eq "0" ]; then 
  java -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB
 fi
 
