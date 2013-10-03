@@ -17,7 +17,7 @@ echo "test_platforms=${mongos[@]}"
 # Download and set Java  
 export JAVA_HOME=/home/${USER}/jdk1.6.0_33/
 export PATH=${JAVA_HOME}bin:$PATH
-
+echo $CURRENT_NODE
 echo ${mongos[@]}|grep ${CURRENT_NODE}
 STATUS=$?
 if [ "$STATUS" -eq "0" ]; then 
