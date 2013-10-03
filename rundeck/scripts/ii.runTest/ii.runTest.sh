@@ -8,7 +8,7 @@ DATABASE_NAME=$5
 MONGOS_PORT=27017
 TEMP=`xmllint --xpath '/project/node/@hostname' shards.xml|sed -e "s/ hostname=/ /g"| sed -e "s/\"/'/g"` 
 declare -a all_mongos=($TEMP)
-for i in (( i=0; i<${OAKS_NUMBER}; i++ ))
+for (( i=0; i<${OAKS_NUMBER}; i++ ))
 do
  mongos_trim=`echo ${all_mongos[$i]}|tr -d ''\'''`
  mongos[$i]=${mongos_trim}
