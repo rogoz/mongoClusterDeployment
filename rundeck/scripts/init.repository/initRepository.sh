@@ -9,9 +9,6 @@ MONGOS_MAIN_PLATFORM=`xmllint --xpath 'string(/project/node[1]/@hostname)' mongo
 
 
 # Download and set Java  
-wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk6-downloads-1637591.html;" http://download.oracle.com/otn-pub/java/jdk/6u33-b03/jdk-6u33-linux-x64.bin   
-chmod a+x jdk-6u33-linux-x64.bin
-yes | ./jdk-6u33-linux-x64.bin
 export JAVA_HOME=/home/${USER}/jdk1.6.0_33/
 export PATH=${JAVA_HOME}bin:$PATH
 
