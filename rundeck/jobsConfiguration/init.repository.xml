@@ -1,0 +1,33 @@
+<joblist>
+  <job>
+    <id>2ce7ff51-3e15-4f99-b9d7-52d7540c92bc</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/init.repository/initRepository.sh</scripturl>
+        <scriptargs>${option.TEST_NAME} ${node.hostname} ${option.DATABASE_NAME}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>init.repository</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+      <options>
+        <option name='DATABASE_NAME' />
+        <option name='TEST_NAME' />
+      </options>
+    </context>
+    <dispatch>
+      <threadcount>15</threadcount>
+      <keepgoing>false</keepgoing>
+      <excludePrecedence>true</excludePrecedence>
+      <rankOrder>ascending</rankOrder>
+    </dispatch>
+    <uuid>2ce7ff51-3e15-4f99-b9d7-52d7540c92bc</uuid>
+    <nodefilters>
+      <exclude>
+        <os-family>unix</os-family>
+      </exclude>
+    </nodefilters>
+  </job>
+</joblist>
