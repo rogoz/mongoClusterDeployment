@@ -1,0 +1,35 @@
+<joblist>
+  <job>
+    <id>c0cd9e44-d6e9-4984-9399-9cc652f786c7</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/ii.runTest/ii.runTest.sh</scripturl>
+        <scriptargs>${option.TEST_NAME} ${node.hostname} ${option.DROP_DB} ${option.OAK_NUMBER} ${option.DATABASE_NAME}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>ii-runTest</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+      <options>
+        <option name='DATABASE_NAME' />
+        <option name='DROP_DB' />
+        <option name='OAKS_NUMBER' />
+        <option name='TEST_NAME' />
+      </options>
+    </context>
+    <dispatch>
+      <threadcount>15</threadcount>
+      <keepgoing>false</keepgoing>
+      <excludePrecedence>true</excludePrecedence>
+      <rankOrder>ascending</rankOrder>
+    </dispatch>
+    <uuid>c0cd9e44-d6e9-4984-9399-9cc652f786c7</uuid>
+    <nodefilters>
+      <exclude>
+        <os-family>unix</os-family>
+      </exclude>
+    </nodefilters>
+  </job>
+</joblist>

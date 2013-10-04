@@ -1,0 +1,29 @@
+<joblist>
+  <job>
+    <id>e713fbcb-5a87-4665-af36-24abf39845d5</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/i.getTests/i.getTests.sh</scripturl>
+        <scriptargs />
+      </command>
+    </sequence>
+    <description></description>
+    <name>i-getTests</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+    </context>
+    <dispatch>
+      <threadcount>15</threadcount>
+      <keepgoing>false</keepgoing>
+      <excludePrecedence>true</excludePrecedence>
+      <rankOrder>ascending</rankOrder>
+    </dispatch>
+    <uuid>e713fbcb-5a87-4665-af36-24abf39845d5</uuid>
+    <nodefilters>
+      <exclude>
+        <os-family>unix</os-family>
+      </exclude>
+    </nodefilters>
+  </job>
+</joblist>
