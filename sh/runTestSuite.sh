@@ -6,9 +6,9 @@ ABSOLUTE_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
 RUNDECK_HOME=${ABSOLUTE_PATH}/rundeck/
 PATH=${PATH}:${RUNDECK_HOME}tools/bin
 DROP_DB=false
-INIT_TEST=LoginTest
+INIT_TEST=CreateNodesBenchmark
 tests=( "$@" )
-OAKS_NUMBER=1
+OAKS_NUMBER=${OAKS_NUMBER}
 
 echo "The following tests will be executed ${tests[@]}"
 
