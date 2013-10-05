@@ -12,6 +12,7 @@ PROVISIONR_PATH=$2
 PROVISIONR_HOST=localhost 
 PROVISIONR_PORT=8181 
 AWS_ACCOUNT_NUMBER=2746-7893-5004
+MONITORING_AGENT_KEY=network-s27947
 
 # creates new instances on amazon
 ${PROVISIONR_PATH}client "provisionr:create --id amazon --key ${MONGOS_KEY} --size ${MONGOS_NUMBER} --hardware-type m1.large --template mongos --image-id ami-4965f479 --timeout 600"
@@ -39,8 +40,12 @@ do
   scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no mongos.xml ${USER}@${trim_ip}:/home/${USER}/mongos.xml
 done
 
-# open the ports between shards and mongos
+# open the ports between shards, mongos and monitoring station
 echo "Authorize communication between security groups -> network-${MONGOS_KEY}(mongos) and network-${SHARDS_KEY} (shards)"
 ec2-authorize network-${SHARDS_KEY} -o network-${MONGOS_KEY} -u $AWS_ACCOUNT_NUMBER
 ec2-authorize network-${SHARDS_KEY} -o network-${SHARDS_KEY} -u $AWS_ACCOUNT_NUMBER
 ec2-authorize network-${MONGOS_KEY} -o network-${SHARDS_KEY} -u $AWS_ACCOUNT_NUMBER
+ec2-authorize network-${MONGOS_KEY} -o network-${MONITORING_AGENT_KEY} -u $AWS_ACCOUNT_NUMBER
+ec2-authorize network-${MONITORING_AGENT_KEY} -o network-${MONGOS_KEY} -u $AWS_ACCOUNT_NUMBER
+ec2-authorize network-${SHARDS_KEY} -o network-${MONITORING_AGENT_KEY} -u $AWS_ACCOUNT_NUMBER
+ec2-authorize network-${MONITORING_AGENT_KEY} -o network-${SHARDS_KEY} -u $AWS_ACCOUNT_NUMBER
