@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROVISIONR_DOWNLOAD_LINK=http://ubuntuone.com/6I7aRI2N9PoHDjdLZk2Hls
+PROVISIONR_DOWNLOAD_LINK=http://ubuntuone.com/2CJ3QdDbw4iMQ94nvOEY8A
 RUNDECK_DOWNLOAD_LINK=http://download.rundeck.org/jar/rundeck-launcher-1.6.0.jar
 ABSOLUTE_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
 
