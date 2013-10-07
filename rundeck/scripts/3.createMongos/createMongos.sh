@@ -12,7 +12,7 @@ PROVISIONR_PATH=$2
 PROVISIONR_HOST=localhost 
 PROVISIONR_PORT=8181 
 AWS_ACCOUNT_NUMBER=2746-7893-5004
-MONITORING_AGENT_KEY=network-s27947
+MONITORING_AGENT_KEY=s27947
 
 # creates new instances on amazon
 ${PROVISIONR_PATH}client "provisionr:create --id amazon --key ${MONGOS_KEY} --size ${MONGOS_NUMBER} --hardware-type m1.large --template mongos --image-id ami-4965f479 --timeout 600"
