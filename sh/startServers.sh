@@ -7,9 +7,9 @@ RUNDECK_HOME=${ABSOLUTE_PATH}/rundeck/
 # start provisionr
 
 cd ${PROVISIONR_HOME}
-./bin/start 1> /dev/null 
+./bin/provisionr 1> /dev/null &
 
-sleep 2
+sleep 60
 
 # start rundeck
 
