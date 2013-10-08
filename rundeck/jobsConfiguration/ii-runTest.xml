@@ -5,7 +5,7 @@
     <sequence keepgoing='false' strategy='node-first'>
       <command>
         <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/ii.runTest/ii.runTest.sh</scripturl>
-        <scriptargs>${option.TEST_NAME} ${node.hostname} ${option.DROP_DB} ${option.OAK_NUMBER} ${option.DATABASE_NAME}</scriptargs>
+        <scriptargs>${option.TEST_NAME} ${node.hostname} ${option.DROP_DB} ${option.OAKS_NUMBER} ${option.DATABASE_NAME}</scriptargs>
       </command>
     </sequence>
     <description></description>
