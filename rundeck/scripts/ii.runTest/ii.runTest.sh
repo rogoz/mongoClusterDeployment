@@ -22,6 +22,7 @@ echo ${mongos[@]}|grep ${CURRENT_NODE}
 STATUS=$?
 if [ "$STATUS" -eq "0" ]; then 
  echo "TEST executed on mongos->$CURRENT_NODE"
+ echo Running command="java -Dwarmup=0 -Druntime=10 -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB"
  java -Dwarmup=0 -Druntime=10 -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB
 fi
 
