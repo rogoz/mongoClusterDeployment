@@ -1,0 +1,22 @@
+<joblist>
+  <job>
+    <id>8682b598-58ed-4e4f-a03b-66ccfa3eae5b</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/5.connectToMMS/connectToMMS.sh</scripturl>
+        <scriptargs>${option.MMS_USER} ${option.MMS_PASS}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>5-monitorCluster</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+      <options>
+        <option name='MMS_PASS' />
+        <option name='MMS_USER' value='rogoz@adobe.com' />
+      </options>
+    </context>
+    <uuid>8682b598-58ed-4e4f-a03b-66ccfa3eae5b</uuid>
+  </job>
+</joblist>
