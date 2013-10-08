@@ -13,7 +13,7 @@ MONGOD_PORT="port=27017"
 
 function retry {
    nTrys=0
-   maxTrys=25
+   maxTrys=50
    status=256
    until [ $status == 0 ] ; do
       echo Running command $1
