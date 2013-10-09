@@ -8,7 +8,7 @@ PATH=${PATH}:${RUNDECK_HOME}tools/bin
 DROP_DB=false
 INIT_TEST=CreateNodesBenchmark
 tests=( "$@" )
-OAKS_NUMBER=${OAKS_NUMBER}
+OAKS_NUMBER=${ENV_OAKS_NUMBER}
 
 echo "The following tests will be executed ${tests[@]}"
 
