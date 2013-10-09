@@ -21,6 +21,6 @@ RESULTS_PATH=${OUTPUT_DIR}/${OAKS_NUMBER}/${TEST_NAME}/
 
 for mongosInstance in "${mongos[@]}" 
 do
-  scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ${USER}@${mongosInstance}:~/results/${TEST_NAME} ${RESULTS_PATH}/${mongosInstance}
+  scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ${USER}@${mongosInstance}:~/results/${TEST_NAME} ${RESULTS_PATH}/${mongosInstance}.txt
   sleep 2 
 done 
