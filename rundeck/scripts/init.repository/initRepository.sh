@@ -24,7 +24,7 @@ if [ "$CURRENT_NODE" == "$MONGOS_MAIN_PLATFORM" ]; then
  echo InitCommand="java -Dwarmup=0 -Druntime=1 -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB"
  java -Dwarmup=0 -Druntime=1 -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB &
  PID=`echo $!`
- sleep 20
+ sleep 50
  kill -9 $PID
 fi
 
