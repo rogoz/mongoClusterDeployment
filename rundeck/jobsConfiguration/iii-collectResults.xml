@@ -1,0 +1,22 @@
+<joblist>
+  <job>
+    <id>ae712a69-c785-4221-baab-4682b8c6d9db</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/iii.processResults/getResults.sh</scripturl>
+        <scriptargs>${option.TEST_NAME} ${option.OAKS_NUMBER}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>iii-collectResults</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+      <options>
+        <option name='OAKS_NUMBER' />
+        <option name='TEST_NAME' />
+      </options>
+    </context>
+    <uuid>ae712a69-c785-4221-baab-4682b8c6d9db</uuid>
+  </job>
+</joblist>
