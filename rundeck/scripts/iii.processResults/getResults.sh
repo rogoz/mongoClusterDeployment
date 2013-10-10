@@ -17,10 +17,10 @@ echo "test_platforms=${mongos[@]}"
 mkdir -p ${OUTPUT_DIR}
 mkdir -p ${OUTPUT_DIR}/${OAKS_NUMBER}/${TEST_NAME}/
 mkdir -p ${CHART_DIR}
-mkdir -p ${CHART_DIR}/${OAKS_NUMBER}/${TEST_NAME}
+mkdir -p ${CHART_DIR}/${OAKS_NUMBER}/
 
 RESULTS_PATH=${OUTPUT_DIR}/${OAKS_NUMBER}/${TEST_NAME}/
-CHART_RESULTS_PATH=${CHART_DIR}/${OAKS_NUMBER}/${TEST_NAME}/
+CHART_RESULTS_PATH=${CHART_DIR}/${OAKS_NUMBER}/
 # scp the test results from the test platforms
 
 for mongosInstance in "${mongos[@]}" 
@@ -48,6 +48,14 @@ do
  v90array[$index]=$v90 
  index=$(( $index + 1 ))
 done
+lastIndexIn90array=$(( $index - 1 ))
+# complete all the values till 4
+for (( i=$index; i<5; i++ ))
+do
+ v90array[$index]=v90array[$lastIndexIn90array]
+done
 echo v90=${v90array[@]}
-# echo "Test Suite | Test Case | Test Class | Test Method | DateTime | min | 10% | 50% | 90% | max " > ${CHART_RESULTS_PATH}/${mongosInstance}.txt
+#create the results file
+echo "Test Suite | Test Case | Test Class | Test Method | DateTime | min | 10% | 50% | 90% | max " > ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
+echo "TESTCASEONLY |   |  | test | date | ${v90[0]} | ${v90[1]} | ${v90[2]} | ${v90[3]} | ${v90[4]}">> ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
 
