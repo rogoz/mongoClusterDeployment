@@ -40,11 +40,11 @@ do
  IFS='|'
  tokens=( $var )
  echo tokens=$tokens
- vmin=$tokens[0]
- v10=$tokens[1]
- v50=$tokens[2]
- v90=$tokens[3]
- vmax=$tokens[4]
+ vmin=${tokens[0]}
+ v10=${tokens[1]}
+ v50=${tokens[2]}
+ v90=${tokens[3]}
+ vmax=${tokens[4]}
  v90array[$index]=$v90 
  index=$(( $index + 1 ))
 done
@@ -52,9 +52,9 @@ lastIndexIn90array=$(( $index - 1 ))
 # complete all the values till 4
 for (( i=$index; i<5; i++ ))
 do
- v90array[$i]=v90array[$lastIndexIn90array]
+ v90array[$i]=${v90array[$lastIndexIn90array]}
 done
-echo v90=${v90array[@]}
+echo v90array=${v90array[@]}
 #create the results file
 echo "Test Suite | Test Case | Test Class | Test Method | DateTime | min | 10% | 50% | 90% | max " > ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
 echo "TESTCASEONLY |   |  | test | date | ${v90array[0]} | ${v90array[1]} | ${v90array[2]} | ${v90array[3]} | ${v90array[4]}">> ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
