@@ -52,10 +52,10 @@ lastIndexIn90array=$(( $index - 1 ))
 # complete all the values till 4
 for (( i=$index; i<5; i++ ))
 do
- v90array[$index]=v90array[$lastIndexIn90array]
+ v90array[$i]=v90array[$lastIndexIn90array]
 done
 echo v90=${v90array[@]}
 #create the results file
 echo "Test Suite | Test Case | Test Class | Test Method | DateTime | min | 10% | 50% | 90% | max " > ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
-echo "TESTCASEONLY |   |  | test | date | ${v90[0]} | ${v90[1]} | ${v90[2]} | ${v90[3]} | ${v90[4]}">> ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
+echo "TESTCASEONLY |   |  | test | date | ${v90array[0]} | ${v90array[1]} | ${v90array[2]} | ${v90array[3]} | ${v90array[4]}">> ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
 
