@@ -34,12 +34,20 @@ index=0
 # get the 90% metric from each instance
 for mongosInstance in "${mongos[@]}" 
 do
+ # get the valuse in the var variable
  NUMBER_OF_LINES=`cat ${RESULTS_PATH}/${mongosInstance}.txt|wc -l`
  var=`sed "${NUMBER_OF_LINES}!d" ${RESULTS_PATH}/${mongosInstance}.txt|sed 's/[^0-9]*//'|sed 's/[ \t]* / | /g'`
- echo var=$var
- echo index=$index
- echo expectedResult="TESTCASEONLY |   | ${test} | test | date | "${var%|*}
+ $IFS='|'
+ tokens=( $var )
+ echo tokens=$tokens
+ vmin=$tokens[0]
+ v10=$tokens[1]
+ v50=$tokens[2]
+ v90=$tokens[3]
+ vmax=$tokens[4]
+ v90array[$index]=$v90 
  index=$(( $index + 1 ))
 done
+echo v90=${v90array[@]}
 # echo "Test Suite | Test Case | Test Class | Test Method | DateTime | min | 10% | 50% | 90% | max " > ${CHART_RESULTS_PATH}/${mongosInstance}.txt
 
