@@ -37,7 +37,7 @@ do
  # get the valuse in the var variable
  NUMBER_OF_LINES=`cat ${RESULTS_PATH}/${mongosInstance}.txt|wc -l`
  var=`sed "${NUMBER_OF_LINES}!d" ${RESULTS_PATH}/${mongosInstance}.txt|sed 's/[^0-9]*//'|sed 's/[ \t]* / | /g'`
- $IFS='|'
+ IFS='|'
  tokens=( $var )
  echo tokens=$tokens
  vmin=$tokens[0]
