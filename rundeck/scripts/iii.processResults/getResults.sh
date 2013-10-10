@@ -35,7 +35,7 @@ index=0
 for mongosInstance in "${mongos[@]}" 
 do
  NUMBER_OF_LINES=`cat ${RESULTS_PATH}/${mongosInstance}.txt|wc -l`
- var=`sed "${NUMBER_OF_LINES}!d" ${INITIAL_RESULTS}/${mongosInstance}.txt|sed 's/[^0-9]*//'|sed 's/[ \t]* / | /g'`
+ var=`sed "${NUMBER_OF_LINES}!d" ${RESULTS_PATH}/${mongosInstance}.txt|sed 's/[^0-9]*//'|sed 's/[ \t]* / | /g'`
  echo var=$var
  echo index=$index
  echo expectedResult="TESTCASEONLY |   | ${test} | test | date | "${var%|*}
