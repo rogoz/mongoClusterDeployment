@@ -2,7 +2,7 @@
 
 TEST_NAME=$1
 OAKS_NUMBER=$2
-OUTPUT_DIR=${WORKSPACE_DIR}/build/results
+OUTPUT_DIR=${WORKSPACE_DIR}
 CHART_DIR=${WORKSPACE_DIR}
 #check the test platforms
 TEMP=`xmllint --xpath '/project/node/@hostname' mongos.xml|sed -e "s/ hostname=/ /g"| sed -e "s/\"/'/g"` 
