@@ -53,6 +53,15 @@ do
  v90array[$i]=${v90array[$lastIndexIn90array]}
 done
 echo v90array=${v90array[@]}
+
+#validate data
+re='^[0-9]+$'
+for element in "${v90array[@]}"
+do 
+if ! [[ $element =~ $re ]] ; then
+   echo "error: $element Not a number" >&2; exit 1
+fi
+done
 #create the results file
 echo "Test Suite | Test Case | Test Class | Test Method | DateTime | min | 10% | 50% | 90% | max " > ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
 echo "TESTCASEONLY |   |  | test | date | ${v90array[0]} | ${v90array[1]} | ${v90array[2]} | ${v90array[3]} | ${v90array[4]}">> ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
