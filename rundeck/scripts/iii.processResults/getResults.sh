@@ -58,8 +58,9 @@ echo v90array=${v90array[@]}
 re='^[0-9]+$'
 for element in "${v90array[@]}"
 do 
-if ! [[ $element =~ $re ]] ; then
-   echo "error: $element Not a number" >&2; exit 1
+tmp=`echo $element|tr -d ' '`
+if ! [[ $tmp =~ $re ]] ; then
+   echo "error: $tmp Not a number" >&2; exit 1
 fi
 done
 #create the results file
