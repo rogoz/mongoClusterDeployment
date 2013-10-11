@@ -54,6 +54,6 @@ do
 done
 echo v90array=${v90array[@]}
 #create the results file
-echo "Test Suite | Test Case | Test Class | Test Method | DateTime | Oak1 | Oak2 | Oak3 | Oak4 | Oak5 " > ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
+echo "Test Suite | Test Case | Test Class | Test Method | DateTime | min | 10% | 50% | 90% | max " > ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
 echo "TESTCASEONLY |   |  | test | date | ${v90array[0]} | ${v90array[1]} | ${v90array[2]} | ${v90array[3]} | ${v90array[4]}">> ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
 
