@@ -3,7 +3,6 @@
 TEST_NAME=$1
 OAKS_NUMBER=$2
 OUTPUT_DIR=${WORKSPACE_DIR}
-CHART_DIR=${WORKSPACE_DIR}
 #check the test platforms
 TEMP=`xmllint --xpath '/project/node/@hostname' mongos.xml|sed -e "s/ hostname=/ /g"| sed -e "s/\"/'/g"` 
 declare -a all_mongos=($TEMP)
@@ -19,7 +18,7 @@ mkdir -p ${OUTPUT_DIR}/${OAKS_NUMBER}/${TEST_NAME}/
 
 
 RESULTS_PATH=${OUTPUT_DIR}/${OAKS_NUMBER}/${TEST_NAME}/
-CHART_RESULTS_PATH=${CHART_DIR}/${OAKS_NUMBER}/
+CHART_RESULTS_PATH=${OUTPUT_DIR}/${OAKS_NUMBER}/
 # scp the test results from the test platforms
 
 for mongosInstance in "${mongos[@]}" 
@@ -55,6 +54,6 @@ do
 done
 echo v90array=${v90array[@]}
 #create the results file
-echo "Test Suite | Test Case | Test Class | Test Method | DateTime | min | 10% | 50% | 90% | max " > ${CHART_DIR}/${TEST_NAME}.txt
-echo "TESTCASEONLY |   |  | test | date | ${v90array[0]} | ${v90array[1]} | ${v90array[2]} | ${v90array[3]} | ${v90array[4]}">> ${CHART_DIR}/${TEST_NAME}.txt
+echo "Test Suite | Test Case | Test Class | Test Method | DateTime | min | 10% | 50% | 90% | max " > ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
+echo "TESTCASEONLY |   |  | test | date | ${v90array[0]} | ${v90array[1]} | ${v90array[2]} | ${v90array[3]} | ${v90array[4]}">> ${CHART_RESULTS_PATH}/${TEST_NAME}.txt
 
