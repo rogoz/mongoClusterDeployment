@@ -11,7 +11,7 @@
     <description></description>
     <name>iii-collectResults</name>
     <context>
-      <project>mongoClusterDeployment</project>
+      <project>oakScalability</project>
       <options>
         <option name='OAKS_NUMBER' />
         <option name='TEST_NAME' />

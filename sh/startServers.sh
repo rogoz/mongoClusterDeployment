@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ABSOLUTE_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
-PROVISIONR_HOME=${ABSOLUTE_PATH}/org.apache.provisionr-0.4.0-incubating-SNAPSHOT/
+PROVISIONR_HOME=${ABSOLUTE_PATH}/apache-provisionr/
 RUNDECK_HOME=${ABSOLUTE_PATH}/rundeck/
 
 # start provisionr

@@ -11,7 +11,7 @@
     <description></description>
     <name>ii-runTest</name>
     <context>
-      <project>mongoClusterDeployment</project>
+      <project>oakScalability</project>
       <options>
         <option name='DATABASE_NAME' />
         <option name='DROP_DB' />

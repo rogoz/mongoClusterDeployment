@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ABSOLUTE_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
-PROVISIONR_HOME=${ABSOLUTE_PATH}/org.apache.provisionr-0.4.0-incubating-SNAPSHOT/
+PROVISIONR_HOME=${ABSOLUTE_PATH}/apache-provisionr/
 RUNDECK_HOME=${ABSOLUTE_PATH}/rundeck/
 
 HDD_SIZE=60
@@ -22,21 +22,21 @@ if [ $OPTIND -eq 1 ]; then echo "No options were passed.Is mandatory to use both
 
 # Create shards
 echo "***** Step 1: Creating cluster's shards. *****"
-run -j 1-createShards --follow -- -SHARDS_NUMBER ${SHARDS_NUMBER} -HDD_SIZE ${HDD_SIZE} -PROVISIONR_PATH ${PROVISIONR_PATH}
+run -j 1-createShards -p mongoClusterDeployment --follow -- -SHARDS_NUMBER ${SHARDS_NUMBER} -HDD_SIZE ${HDD_SIZE} -PROVISIONR_PATH ${PROVISIONR_PATH}
 echo "***** Step 1: Completed. *****"
 
 # Configure shards
 echo "***** Step 2: Configure cluster's shards. *****"
-run -j 2-configureShards --follow
+run -j 2-configureShards -p mongoClusterDeployment --follow
 echo "***** Step 2: Completed. *****"
 
 # Create mongos
 echo "***** Step 3: Create mongos platforms. *****"
-run -j 3-createMongos --follow -- -MONGOS_NUMBER ${MONGOS_NUMBER} -PROVISIONR_PATH ${PROVISIONR_PATH}
+run -j 3-createMongos -p mongoClusterDeployment --follow -- -MONGOS_NUMBER ${MONGOS_NUMBER} -PROVISIONR_PATH ${PROVISIONR_PATH}
 echo "***** Step 3: Completed. *****"
 
 #Configure mongos
 echo "***** Step 4: Configure mongos platforms. *****"
-run -j 4-configureMongos --follow
+run -j 4-configureMongos -p mongoClusterDeployment --follow
 echo "***** Step 4: Completed. *****"
 

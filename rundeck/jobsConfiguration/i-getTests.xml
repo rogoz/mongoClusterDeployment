@@ -11,7 +11,7 @@
     <description></description>
     <name>i-getTests</name>
     <context>
-      <project>mongoClusterDeployment</project>
+      <project>oakScalability</project>
     </context>
     <dispatch>
       <threadcount>15</threadcount>
