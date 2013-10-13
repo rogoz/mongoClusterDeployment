@@ -7,8 +7,8 @@ ABSOLUTE_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
 # install PROVISIONR
 echo ${ABSOLUTE_PATH}
 tar xvfz ${ABSOLUTE_PATH}/org.apache.provisionr-0.4.0-incubating-SNAPSHOT.tar.gz -C ${ABSOLUTE_PATH}
-cp ${ABSOLUTE_PATH}/../apache-provision/mongod.xml ${ABSOLUTE_PATH}/provisionr-0.4.0-incubating/templates/mongod.xml
-cp ${ABSOLUTE_PATH}/../apache-provision/mongod.xml ${ABSOLUTE_PATH}/provisionr-0.4.0-incubating/templates/mongos.xml
+cp ${ABSOLUTE_PATH}/../apache-provisionr/templates/mongod.xml ${ABSOLUTE_PATH}/provisionr-0.4.0-incubating/templates/mongod.xml
+cp ${ABSOLUTE_PATH}/../apache-provisionr/templates/mongod.xml ${ABSOLUTE_PATH}/provisionr-0.4.0-incubating/templates/mongos.xml
 
 # install RUNDECK
 RUNDECK_HOME=${ABSOLUTE_PATH}/rundeck/
