@@ -18,7 +18,7 @@ do
  DATABASE_SUFIX=$RANDOM
  echo "Running ${test} on database Oak-database-$DATABASE_SUFIX"
  run -j init.repository -p oakScalability --follow -- -TEST_NAME ${INIT_TEST} -DATABASE_NAME Oak-database-$DATABASE_SUFIX
- run -j ii-runTest -p oakScalability --follow -- -TEST_NAME ${test} -DROP_DB ${DROP_DB} -OAKS_NUMBER $OAKS_NUMBER -DATABASE_NAME Oak-database-$DATABASE_SUFIX
+ run -j ii-runTest -p oakScalability --follow -- -TEST_NAME ${test} -DROP_DB ${DROP_DB} -OAKS_NUMBER $OAKS_NUMBER -DATABASE_NAME Oak-database-$DATABASE_SUFIX -RUNTIME ${RUNTIME}
  run -j iii-collectResults -p oakScalability --follow -- -TEST_NAME ${test} -OAKS_NUMBER $OAKS_NUMBER
  sleep $TIMEOUT
 done 

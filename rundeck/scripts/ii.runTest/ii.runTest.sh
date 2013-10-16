@@ -5,6 +5,7 @@ CURRENT_NODE=$2
 DROP_DB=$3
 OAKS_NUMBER=$4
 DATABASE_NAME=$5
+RUNTIME=$6
 MONGOS_PORT=27017
 TEMP=`xmllint --xpath '/project/node/@hostname' mongos.xml|sed -e "s/ hostname=/ /g"| sed -e "s/\"/'/g"` 
 
@@ -28,8 +29,8 @@ echo ${mongos[@]}|grep ${CURRENT_NODE}
 STATUS=$?
 if [ "$STATUS" -eq "0" ]; then 
  echo "TEST executed on mongos->$CURRENT_NODE"
- echo Running command="java -Dwarmup=0 -Druntime=10 -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB"
- java -Dwarmup=0 -Druntime=5 -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB|tee ~/results/${TEST_NAME} 
+ echo Running command="java -Dwarmup=0 -Druntime=$RUNTIME -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB"
+ java -Dwarmup=0 -Druntime=$RUNTIME -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB|tee ~/results/${TEST_NAME} 
 fi
 
 
