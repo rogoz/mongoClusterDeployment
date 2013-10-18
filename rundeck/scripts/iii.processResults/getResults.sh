@@ -38,11 +38,12 @@ do
  IFS='|'
  tokens=( $var )
  echo tokens=$tokens
- vmin=${tokens[0]}
- v10=${tokens[1]}
- v50=${tokens[2]}
- v90=${tokens[3]}
- vmax=${tokens[4]}
+ vC=${tokens[0]}
+ vmin=${tokens[1]}
+ v10=${tokens[2]}
+ v50=${tokens[3]}
+ v90=${tokens[4]}
+ vmax=${tokens[5]}
  v90array[$index]=$v90 
  index=$(( $index + 1 ))
 done
