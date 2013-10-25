@@ -19,6 +19,8 @@ sleep 75
 ${RUNDECK_HOME}/tools/bin/rd-project -a create -p mongoClusterDeployment --project.ssh-keypath=${HOME}/.ssh/id_rsa --project.resources.url=http://localhost:8181/rundeck/machines.xml
 
 ${RUNDECK_HOME}/tools/bin/rd-project -a create -p oakScalability --project.ssh-keypath=${HOME}/.ssh/id_rsa --project.resources.url=http://localhost:8181/rundeck/machines.xml
+${RUNDECK_HOME}/tools/bin/rd-project -a create -p oakScalabilityHighLevel --project.ssh-keypath=${HOME}/.ssh/id_rsa --project.resources.url=http://localhost:8181/rundeck/machines.xml
+
 
 # import jobs
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/1-createShards.xml
