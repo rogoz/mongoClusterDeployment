@@ -5,6 +5,7 @@
         <package>mongodb-10gen</package>
         <package>libxml2-utils</package>
         <package>git</package>
+        <package>unzip</package>
     </packages>
     <ports>
         <port>27017</port>
