@@ -14,7 +14,7 @@ declare -a shards=($TEMP)
  
 function retry {
    nTrys=0
-   maxTrys=50
+   maxTrys=100
    status=256
    until [ $status == 0 ] ; do
       echo Running command $1
@@ -27,7 +27,7 @@ function retry {
       fi
       if [ $status != 0 ] ; then
             echo "Failed (exit code $status)... retry $nTrys"
-            sleep 10
+            sleep 20
       fi
    done
 }
