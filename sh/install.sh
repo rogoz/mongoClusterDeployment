@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
 
 ABSOLUTE_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
 
@@ -19,7 +18,7 @@ sleep 75
 ${RUNDECK_HOME}/tools/bin/rd-project -a create -p mongoClusterDeployment --project.ssh-keypath=${HOME}/.ssh/id_rsa --project.resources.url=http://localhost:8181/rundeck/machines.xml
 
 ${RUNDECK_HOME}/tools/bin/rd-project -a create -p oakScalability --project.ssh-keypath=${HOME}/.ssh/id_rsa --project.resources.url=http://localhost:8181/rundeck/machines.xml
-${RUNDECK_HOME}/tools/bin/rd-project -a create -p oakScalabilityHighLevel --project.ssh-keypath=${HOME}/.ssh/id_rsa --project.resources.url=http://localhost:8181/rundeck/machines.xml
+
 
 
 # import jobs

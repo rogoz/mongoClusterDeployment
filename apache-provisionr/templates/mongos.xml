@@ -6,6 +6,7 @@
         <package>libxml2-utils</package>
         <package>git</package>
         <package>unzip</package>
+        <package>libdigest-hmac-perl</package>
     </packages>
     <ports>
         <port>27017</port>
