@@ -11,7 +11,7 @@ rm -rf ${ABSOLUTE_PATH}/productPackage
 mkdir -p ${ABSOLUTE_PATH}/productPackage
 
 # get/install/update product package
-./s3curl.pl --id=toto -- ${PACKAGE_LINK}>~${ABSOLUTE_PATH}/productPackage/rundeckPackage.tar.gz
+s3curl.pl --id=toto -- ${PACKAGE_LINK}>~${ABSOLUTE_PATH}/productPackage/rundeckPackage.tar.gz
 cd ${ABSOLUTE_PATH}/productPackage/
 tar xvfz rundeckPackage.tar.gz
 
