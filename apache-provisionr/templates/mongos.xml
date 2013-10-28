@@ -11,6 +11,7 @@
     <ports>
         <port>27017</port>
         <port>28017</port>
+        <port>9001</port>
     </ports>
     <repositories>
         <repository id="10gen">
