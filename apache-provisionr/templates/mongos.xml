@@ -7,6 +7,7 @@
         <package>git</package>
         <package>unzip</package>
         <package>libdigest-hmac-perl</package>
+        <package>jmeter</package>
     </packages>
     <ports>
         <port>27017</port>
