@@ -1,0 +1,29 @@
+<joblist>
+  <job>
+    <id>8559455e-49e9-4392-8651-147454021a52</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/6.installJava/installJava.sh</scripturl>
+        <scriptargs />
+      </command>
+    </sequence>
+    <description></description>
+    <name>6-installJava</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+    </context>
+    <dispatch>
+      <threadcount>15</threadcount>
+      <keepgoing>false</keepgoing>
+      <excludePrecedence>true</excludePrecedence>
+      <rankOrder>ascending</rankOrder>
+    </dispatch>
+    <uuid>8559455e-49e9-4392-8651-147454021a52</uuid>
+    <nodefilters>
+      <exclude>
+        <os-family>unix</os-family>
+      </exclude>
+    </nodefilters>
+  </job>
+</joblist>
