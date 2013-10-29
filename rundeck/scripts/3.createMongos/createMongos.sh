@@ -15,7 +15,7 @@ AWS_ACCOUNT_NUMBER=2746-7893-5004
 MONITORING_AGENT_KEY=s27947
 
 # creates new instances on amazon
-${PROVISIONR_PATH}client "provisionr:create --id amazon --key ${MONGOS_KEY} --size ${MONGOS_NUMBER} --hardware-type m1.large --template mongos --image-id ami-4965f479 --timeout 600"
+${PROVISIONR_PATH}client "provisionr:create --id amazon --key ${MONGOS_KEY} --size ${MONGOS_NUMBER} --hardware-type m1.large --template mongos --image-id ami-4965f479 --timeout 900"
 # wait for the instances to be created
 sleep 900
 
