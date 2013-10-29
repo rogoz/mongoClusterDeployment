@@ -39,4 +39,9 @@ echo "***** Step 3: Completed. *****"
 echo "***** Step 4: Configure mongos platforms. *****"
 run -j 4-configureMongos -p mongoClusterDeployment --follow
 echo "***** Step 4: Completed. *****"
+#Install Java
+echo "***** Step 4: Configure mongos platforms. *****"
+run -j 6-installJava -p mongoClusterDeployment --follow
+echo "***** Step 4: Completed. *****"
+
 
