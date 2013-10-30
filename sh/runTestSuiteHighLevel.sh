@@ -12,6 +12,6 @@ echo "The following tests will be executed ${tests[@]}"
 for test in "${tests[@]}"
 do
  echo "Running ${test}"
- run -j d-runTests -p oakScalabilityHighLevel --follow -- -TEST_NAME ${TEST_NAME} -RUNTIME ${RUNTIME} -OAKS_NUMBER $OAKS_NUMBER
+ run -j d-runTests -p oakScalabilityHighLevel --follow -- -TEST_NAME ${test} -RUNTIME ${RUNTIME} -OAKS_NUMBER $OAKS_NUMBER
  sleep $TIMEOUT
 done 
