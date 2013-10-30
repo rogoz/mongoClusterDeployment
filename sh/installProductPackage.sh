@@ -20,5 +20,6 @@ ${RUNDECK_HOME}/tools/bin/rd-project -a create -p oakScalabilityHighLevel --proj
 # import jobs
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/a-downloadProduct.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/b-installProduct.xml
-
+${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/c-getTestsOnMongos.xml
+${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/d-runTests.xml
 kill -9 `ps -ef|grep rundeck|grep -v grep|awk '{print $2}'`
