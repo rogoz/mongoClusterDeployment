@@ -13,5 +13,6 @@ for test in "${tests[@]}"
 do
  echo "Running ${test}"
  run -j d-runTests -p oakScalabilityHighLevel --follow -- -TEST_NAME ${test} -RUNTIME ${RUNTIME} -OAKS_NUMBER $OAKS_NUMBER
+ run -j e-getResultsHighLevel -p oakScalabilityHighLevel --follow -- -TEST_NAME ${test} -OAKS_NUMBER $OAKS_NUMBER
  sleep $TIMEOUT
 done 
