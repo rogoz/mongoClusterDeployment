@@ -9,9 +9,11 @@ if [ ! -f jdk-6u33-linux-x64.bin ]; then
     yes | ./jdk-6u33-linux-x64.bin
 fi
 
-#Install Jmeter plugin
-if [ ! -f JMeterPlugins-Standard-1.1.2.zip ]; then
-    wget http://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-1.1.2.zip
-    sudo cp JMeterPlugins-Standard-1.1.2.zip /usr/share/jmeter/JMeterPlugins-Standard-1.1.2.zip
-    sudo unzip JMeterPlugins-Standard-1.1.2.zip
-fi
+sudo chmod -R a+x ${JMETER_HOME}
+rm -rf JMeterPlugins-Standard-1.1.2.zip
+rm -rf ${JMETER_HOME}/JMeterPlugins-Standard-1.1.2.zip
+wget http://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-1.1.2.zip
+cp JMeterPlugins-Standard-1.1.2.zip ${JMETER_HOME}/JMeterPlugins-Standard-1.1.2.zip
+cd ${JMETER_HOME}
+unzip -o JMeterPlugins-Standard-1.1.2.zip
+
