@@ -14,6 +14,6 @@ sudo rm -rf JMeterPlugins-Standard-1.1.2.zip
 sudo rm -rf ${JMETER_HOME}/JMeterPlugins-Standard-1.1.2.zip
 sudo wget http://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-1.1.2.zip
 sudo cp JMeterPlugins-Standard-1.1.2.zip ${JMETER_HOME}/JMeterPlugins-Standard-1.1.2.zip
-sudo cd ${JMETER_HOME}
+cd ${JMETER_HOME}
 sudo unzip -o JMeterPlugins-Standard-1.1.2.zip
 
