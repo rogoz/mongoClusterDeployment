@@ -10,10 +10,10 @@ if [ ! -f jdk-6u33-linux-x64.bin ]; then
 fi
 
 sudo chmod -R a+x ${JMETER_HOME}
-rm -rf JMeterPlugins-Standard-1.1.2.zip
-rm -rf ${JMETER_HOME}/JMeterPlugins-Standard-1.1.2.zip
-wget http://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-1.1.2.zip
-cp JMeterPlugins-Standard-1.1.2.zip ${JMETER_HOME}/JMeterPlugins-Standard-1.1.2.zip
-cd ${JMETER_HOME}
-unzip -o JMeterPlugins-Standard-1.1.2.zip
+sudo rm -rf JMeterPlugins-Standard-1.1.2.zip
+sudo rm -rf ${JMETER_HOME}/JMeterPlugins-Standard-1.1.2.zip
+sudo wget http://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-1.1.2.zip
+sudo cp JMeterPlugins-Standard-1.1.2.zip ${JMETER_HOME}/JMeterPlugins-Standard-1.1.2.zip
+sudo cd ${JMETER_HOME}
+sudo unzip -o JMeterPlugins-Standard-1.1.2.zip
 
