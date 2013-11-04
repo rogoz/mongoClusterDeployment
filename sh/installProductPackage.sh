@@ -23,4 +23,5 @@ ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundec
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/c-getTestsOnMongos.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/d-runTests.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/e-getResultsHighLevel.xml
+${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/e-getLogs.xml
 kill -9 `ps -ef|grep rundeck|grep -v grep|awk '{print $2}'`
