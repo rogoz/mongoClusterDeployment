@@ -1,7 +1,7 @@
 <joblist>
   <job>
     <id>ea540733-79e8-4729-8507-7dddc65b2724</id>
-    <loglevel>INFO</loglevel>
+    <loglevel>ERROR</loglevel>
     <sequence keepgoing='false' strategy='step-first'>
       <command>
         <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/1.createShards/createShards.sh</scripturl>

@@ -1,7 +1,7 @@
 <joblist>
   <job>
     <id>74c7f590-b468-47e5-9269-2ef435e20305</id>
-    <loglevel>INFO</loglevel>
+    <loglevel>ERROR</loglevel>
     <sequence keepgoing='false' strategy='step-first'>
       <command>
         <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/4.configureMongos/configureMongos1.sh</scripturl>

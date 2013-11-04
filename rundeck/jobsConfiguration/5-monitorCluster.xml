@@ -1,7 +1,7 @@
 <joblist>
   <job>
     <id>8682b598-58ed-4e4f-a03b-66ccfa3eae5b</id>
-    <loglevel>INFO</loglevel>
+    <loglevel>ERROR</loglevel>
     <sequence keepgoing='false' strategy='node-first'>
       <command>
         <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/5.connectToMMS/connectToMMS.sh</scripturl>

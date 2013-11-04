@@ -1,7 +1,7 @@
 <joblist>
   <job>
     <id>8559455e-49e9-4392-8651-147454021a52</id>
-    <loglevel>INFO</loglevel>
+    <loglevel>ERROR</loglevel>
     <sequence keepgoing='false' strategy='node-first'>
       <command>
         <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/6.installJava/installJava.sh</scripturl>
