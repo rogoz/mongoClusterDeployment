@@ -16,3 +16,4 @@ do
  run -j e-getResultsHighLevel -p oakScalabilityHighLevel --follow -- -TEST_NAME ${test} -OAKS_NUMBER $OAKS_NUMBER
  sleep $TIMEOUT
 done 
+run -j e-getLogs -p oakScalabilityHighLevel --follow -- -OAKS_NUMBER ${OAKS_NUMBER}
