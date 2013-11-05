@@ -15,7 +15,7 @@ sleep 60
 # start rundeck
 
 cd ${RUNDECK_HOME}
-java -jar rundeck*.jar &
+java -mx2g -jar rundeck*.jar &
 sleep 120
 clear
 
