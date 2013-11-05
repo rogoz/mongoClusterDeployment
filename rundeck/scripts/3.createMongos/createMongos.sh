@@ -5,7 +5,7 @@
 # MONGOS_NUMBER is defined as a rundeck job option
 
 RAND=$(( $RANDOM % 100000 ))
-MONGOS_KEY=s${RAND}
+MONGOS_KEY=t${RAND}
 SHARDS_KEY=`xmllint --xpath 'string(/project/node[1]/attribute[@name="key"]/@value)' shards.xml`
 MONGOS_NUMBER=$1
 PROVISIONR_PATH=$2
