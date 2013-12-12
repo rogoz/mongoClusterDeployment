@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROVISIONR_DOWNLOAD_LINK=http://www.us.apache.org/dist/incubator/provisionr/stable/provisionr-0.4.0-incubating.tar.gz
-RUNDECK_DOWNLOAD_LINK=http://download.rundeck.org/jar/rundeck-launcher-1.6.0.jar
+RUNDECK_DOWNLOAD_LINK=http://download.rundeck.org/jar/rundeck-launcher-1.6.2.jar
 ABSOLUTE_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
 
 rm -rf ${ABSOLUTE_PATH}/build
