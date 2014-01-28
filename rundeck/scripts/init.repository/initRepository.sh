@@ -6,7 +6,7 @@ DATABASE_NAME=$3
 DROP_DB=false
 MONGOS_PORT=27017
 MONGOS_MAIN_PLATFORM=`xmllint --xpath 'string(/project/node[1]/@hostname)' mongos.xml`
-
+REPOSITORY_FIXTURE=Oak-MongoNS
 
 # Download and set Java  
 
@@ -21,8 +21,8 @@ if [ "$CURRENT_NODE" == "$MONGOS_MAIN_PLATFORM" ]; then
  mongo --host localhost $DATABASE_NAME --port $MONGOS_PORT --eval "sh.shardCollection(\"$DATABASE_NAME.nodes\", { \"_id\": 1 }, true)" 
  mongo --host localhost $DATABASE_NAME --port $MONGOS_PORT --eval "sh.shardCollection(\"$DATABASE_NAME.blobs\", { \"_id\": 1 }, true)" 
  echo "Start tests on the main mongos platform"
- echo InitCommand="java -Dwarmup=0 -Druntime=1 -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB"
- java -Dwarmup=0 -Druntime=1 -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB &
+ echo InitCommand="java -Dwarmup=0 -Druntime=1 -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME ${REPOSITORY_FIXTURE} --db $DATABASE_NAME --dropDBAfterTest $DROP_DB"
+ java -Dwarmup=0 -Druntime=1 -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME ${REPOSITORY_FIXTURE} --db $DATABASE_NAME --dropDBAfterTest $DROP_DB &
  PID=`echo $!`
  sleep 50
  kill -9 $PID
