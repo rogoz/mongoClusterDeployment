@@ -9,7 +9,7 @@ RUNTIME=$6
 ENABLE_PROFILE=$7
 MONGOS_PORT=27017
 TEMP=`xmllint --xpath '/project/node/@hostname' mongos.xml|sed -e "s/ hostname=/ /g"| sed -e "s/\"/'/g"` 
-
+REPOSITORY_FIXTURE=Oak-MongoNS
 
 #cleanup first 
 rm -rf ~/results/
@@ -30,8 +30,8 @@ echo ${mongos[@]}|grep ${CURRENT_NODE}
 STATUS=$?
 if [ "$STATUS" -eq "0" ]; then 
  echo "TEST executed on mongos->$CURRENT_NODE"
- echo Running command="java -Dwarmup=0 -Druntime=$RUNTIME -Dprofile=$ENABLE_PROFILE -mx1g -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB"
- java -Dwarmup=0 -Druntime=$RUNTIME -Dprofile=$ENABLE_PROFILE -mx1g -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME Oak-Mongo --db $DATABASE_NAME --dropDBAfterTest $DROP_DB|tee ~/results/${TEST_NAME} 
+ echo Running command="java -Dwarmup=0 -Druntime=$RUNTIME -Dprofile=$ENABLE_PROFILE -mx1g -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME ${REPOSITORY_FIXTURE} --db $DATABASE_NAME --dropDBAfterTest $DROP_DB"
+ java -Dwarmup=0 -Druntime=$RUNTIME -Dprofile=$ENABLE_PROFILE -mx1g -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME ${REPOSITORY_FIXTURE} --db $DATABASE_NAME --dropDBAfterTest $DROP_DB|tee ~/results/${TEST_NAME} 
 fi
 
 
