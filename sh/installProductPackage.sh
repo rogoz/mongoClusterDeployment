@@ -17,6 +17,8 @@ tar xvfz rundeckPackage.tar.gz
 
 ${RUNDECK_HOME}/tools/bin/rd-project -a create -p oakScalabilityHighLevel --project.ssh-keypath=${HOME}/.ssh/id_rsa --project.resources.url=http://localhost:8181/rundeck/machines.xml
 
+${RUNDECK_HOME}/tools/bin/rd-project -a create -p tartan --project.ssh-keypath=${HOME}/.ssh/id_rsa --project.resources.url=http://localhost:8181/rundeck/machines.xml
+
 # import jobs
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/a-downloadProduct.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/b-installProduct.xml
@@ -24,4 +26,5 @@ ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundec
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/d-runTests.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/e-getResultsHighLevel.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/e-getLogs.xml
+${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${ABSOLUTE_PATH}/productPackage/rundeckResources/jobs/t-installPackage.xml
 kill -9 `ps -ef|grep rundeck|grep -v grep|awk '{print $2}'`
