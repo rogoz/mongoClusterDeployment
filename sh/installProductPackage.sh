@@ -4,8 +4,6 @@ PACKAGE_LINK=$1
 
 ABSOLUTE_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
 RUNDECK_HOME=${ABSOLUTE_PATH}/rundeck/
-java -jar ${RUNDECK_HOME}/rundeck*.jar &
-sleep 75
 
 rm -rf ${ABSOLUTE_PATH}/productPackage
 mkdir -p ${ABSOLUTE_PATH}/productPackage
