@@ -30,8 +30,8 @@ echo ${mongos[@]}|grep ${CURRENT_NODE}
 STATUS=$?
 if [ "$STATUS" -eq "0" ]; then 
  echo "TEST executed on mongos->$CURRENT_NODE"
- echo Running command="java -Dwarmup=0 -Druntime=$RUNTIME -Dprofile=$ENABLE_PROFILE -mx1g -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME ${REPOSITORY_FIXTURE} --db $DATABASE_NAME --dropDBAfterTest $DROP_DB"
- java -Dwarmup=0 -Druntime=$RUNTIME -Dprofile=$ENABLE_PROFILE -mx1g -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME ${REPOSITORY_FIXTURE} --db $DATABASE_NAME --dropDBAfterTest $DROP_DB|tee ~/results/${TEST_NAME} 
+ echo Running command="java -Dwarmup=0 -Dverbose=true -DnodeType=oak:Unstructured -Druntime=$RUNTIME -Dprofile=$ENABLE_PROFILE -mx1g -server -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME ${REPOSITORY_FIXTURE} --db $DATABASE_NAME --dropDBAfterTest $DROP_DB"
+ java -Dwarmup=0 -Dverbose=true -DnodeType=oak:Unstructured -Druntime=$RUNTIME -Dprofile=$ENABLE_PROFILE -mx1g -server -jar /home/${USER}/jackrabbit-oak/oak-run/target/oak-run-*.jar benchmark $TEST_NAME ${REPOSITORY_FIXTURE} --db $DATABASE_NAME --dropDBAfterTest $DROP_DB|tee ~/results/${TEST_NAME} 
 fi
 
 
