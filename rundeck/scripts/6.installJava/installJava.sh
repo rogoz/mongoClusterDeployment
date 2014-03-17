@@ -4,9 +4,10 @@ JMETER_HOME=/usr/share/jmeter/
 JMETER_EX_HOME=${JMETER_HOME}lib/ext
 # Download and set Java
 if [ ! -f jdk-6u33-linux-x64.bin ]; then
-    wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk6-downloads-1637591.html;" http://download.oracle.com/otn-pub/java/jdk/6u33-b03/jdk-6u33-linux-x64.bin   
+    wget http://ubuntuone.com/1R6uULElw2AJ2E0ymvqURY --output-document jdk-6u33-linux-x64.bin   
     chmod a+x jdk-6u33-linux-x64.bin
     yes | ./jdk-6u33-linux-x64.bin
+    mv jdk1.6.0_37 jdk1.6.0_33
 fi
 
 sudo chmod -R a+x ${JMETER_HOME}
