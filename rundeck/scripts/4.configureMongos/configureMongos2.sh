@@ -6,7 +6,7 @@ MONGOS_MAIN=`xmllint --xpath 'string(/project/node[1]/@hostname)' mongos.xml`
 CURRENT_NODE=$1
 MONGOS_PORT=27017 
 MONGOD_PORT=27017 
-DATABASE_NAME=Oak 
+DATABASE_NAME=aem-author 
 # get shards Ips 
  
 TEMP=`xmllint --xpath '/project/node/@hostname' shards.xml|sed -e "s/ hostname=/ /g"| sed -e "s/\"/'/g"` 
