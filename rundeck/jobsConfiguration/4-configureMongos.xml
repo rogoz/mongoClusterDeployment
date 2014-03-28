@@ -1,8 +1,12 @@
 <joblist>
   <job>
     <id>74c7f590-b468-47e5-9269-2ef435e20305</id>
-    <loglevel>ERROR</loglevel>
+    <loglevel>INFO</loglevel>
     <sequence keepgoing='false' strategy='step-first'>
+      <command>
+        <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/2.configureShards/configureShards0.sh</scripturl>
+        <scriptargs />
+      </command>
       <command>
         <scripturl>https://raw.github.com/rogoz/mongoClusterDeployment/master/rundeck/scripts/4.configureMongos/configureMongos1.sh</scripturl>
         <scriptargs />
@@ -25,9 +29,7 @@
     </dispatch>
     <uuid>74c7f590-b468-47e5-9269-2ef435e20305</uuid>
     <nodefilters>
-      <exclude>
-        <os-family>unix</os-family>
-      </exclude>
+      <filter>!os-family: unix</filter>
     </nodefilters>
   </job>
 </joblist>
