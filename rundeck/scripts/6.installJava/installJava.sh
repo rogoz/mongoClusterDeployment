@@ -17,4 +17,6 @@ sudo wget http://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-1.1.2.
 sudo cp JMeterPlugins-Standard-1.1.2.zip ${JMETER_HOME}/JMeterPlugins-Standard-1.1.2.zip
 cd ${JMETER_HOME}
 sudo unzip -o JMeterPlugins-Standard-1.1.2.zip
+ulimit -n 
+ulimit -Hn 
 
