@@ -34,6 +34,12 @@ function retry {
 
 TEST_COMMAND='mongo --eval "printjson(db.serverStatus())"'
 retry "${TEST_COMMAND}" 
+
+echo "jenkins soft nofile 500000" | sudo tee /etc/security/limits.conf
+echo "jenkins hard nofile 500000" | sudo tee /etc/security/limits.conf
+
+
+
  
 # configure the cluster from the main platform 
 if [ "$CURRENT_NODE" == "$MONGOS_MAIN" ]; then 
@@ -63,3 +69,4 @@ if [ "$CURRENT_NODE" == "$MONGOS_MAIN" ]; then
 	mongo --host localhost $DATABASE_NAME --port $MONGOS_PORT --eval "sh.shardCollection(\"$DATABASE_NAME.nodes\", { \"_id\": 1 }, true)" 
 	mongo --host localhost $DATABASE_NAME --port $MONGOS_PORT --eval "sh.shardCollection(\"$DATABASE_NAME.blobs\", { \"_id\": 1 }, true)" 
 fi
+
