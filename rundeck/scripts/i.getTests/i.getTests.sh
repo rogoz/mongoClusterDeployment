@@ -25,4 +25,4 @@ export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128m"
 export PATH=$PATH:$M2
 
 # build oak
-mvn -f ./jackrabbit-oak/pom.xml clean install -DskipTests 
+mvn -f ./jackrabbit-oak/pom.xml clean install -Poak-run-oak -DskipTests 
