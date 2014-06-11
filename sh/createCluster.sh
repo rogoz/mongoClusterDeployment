@@ -32,16 +32,16 @@ echo "***** Step 2: Completed. *****"
 
 # Create mongos
 echo "***** Step 3: Create mongos platforms. *****"
-run -j 3-createMongos -p mongoClusterDeployment --follow -- -MONGOS_NUMBER ${MONGOS_NUMBER} -PROVISIONR_PATH ${PROVISIONR_PATH}
+#run -j 3-createMongos -p mongoClusterDeployment --follow -- -MONGOS_NUMBER ${MONGOS_NUMBER} -PROVISIONR_PATH ${PROVISIONR_PATH}
 echo "***** Step 3: Completed. *****"
 
 #Configure mongos
 echo "***** Step 4: Configure mongos platforms. *****"
-run -j 4-configureMongos -p mongoClusterDeployment --follow
+#run -j 4-configureMongos -p mongoClusterDeployment --follow
 echo "***** Step 4: Completed. *****"
 #Install Java
 echo "***** Step 4: Configure mongos platforms. *****"
-run -j 6-installJava -p mongoClusterDeployment --follow
+#run -j 6-installJava -p mongoClusterDeployment --follow
 echo "***** Step 4: Completed. *****"
 
 
