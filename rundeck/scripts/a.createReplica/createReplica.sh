@@ -11,7 +11,7 @@ SHARDS_KEY=t${RAND}
 SHARDS_NUMBER=$1
 HDD_SIZE=$2
 PROVISIONR_PATH=$3
-TIME_OUT=600
+TIME_OUT=700
 
 ${PROVISIONR_PATH}client "provisionr:create --id amazon --key ${SHARDS_KEY} --size ${SHARDS_NUMBER} --volume /dev/sdh1:${HDD_SIZE} --volume /dev/sdh2:${HDD_SIZE} --volume /dev/sdh3:${HDD_SIZE} --volume /dev/sdh4:${HDD_SIZE} --hardware-type m1.xlarge --template mongod --image-id ami-4965f479 --timeout 700" 
  
