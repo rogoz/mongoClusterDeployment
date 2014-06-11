@@ -4,6 +4,7 @@
     <packages>
         <package>mdadm</package>
         <package>lvm2</package>
+        <package>libxml2-utils</package>
 	<package>mongodb-10gen</package>
 	
     </packages>
