@@ -1,0 +1,31 @@
+<joblist>
+  <job>
+    <id>e65b1dbb-98b7-4a42-81cb-259c9bfc4d28</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='step-first'>
+      <command>
+        <scripturl>https://raw.githubusercontent.com/rogoz/mongoClusterDeployment/socoKPI/rundeck/scripts/b.configureReplica/configureReplica0.sh</scripturl>
+        <scriptargs />
+      </command>
+      <command>
+        <scripturl>https://raw.githubusercontent.com/rogoz/mongoClusterDeployment/socoKPI/rundeck/scripts/b.configureReplica/configureReplica.sh</scripturl>
+        <scriptargs>${node.hostname}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>b-configureReplicas</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+    </context>
+    <dispatch>
+      <threadcount>15</threadcount>
+      <keepgoing>false</keepgoing>
+      <excludePrecedence>true</excludePrecedence>
+      <rankOrder>ascending</rankOrder>
+    </dispatch>
+    <uuid>e65b1dbb-98b7-4a42-81cb-259c9bfc4d28</uuid>
+    <nodefilters>
+      <filter>!os-family: unix</filter>
+    </nodefilters>
+  </job>
+</joblist>

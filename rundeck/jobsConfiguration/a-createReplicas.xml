@@ -1,0 +1,23 @@
+<joblist>
+  <job>
+    <id>bd5c5e75-1baf-4449-9f99-3b8251803e91</id>
+    <loglevel>INFO</loglevel>
+    <sequence keepgoing='false' strategy='step-first'>
+      <command>
+        <scripturl>https://raw.githubusercontent.com/rogoz/mongoClusterDeployment/socoKPI/rundeck/scripts/a.createReplica/createReplica.sh</scripturl>
+        <scriptargs>${option.SHARDS_NUMBER} ${option.HDD_SIZE} ${option.PROVISIONR_PATH}</scriptargs>
+      </command>
+    </sequence>
+    <description></description>
+    <name>a-createReplicas</name>
+    <context>
+      <project>mongoClusterDeployment</project>
+      <options>
+        <option name='HDD_SIZE' value='25' />
+        <option name='PROVISIONR_PATH' value='/home/tudor/repos/incubator-provisionr/karaf/assembly/target/org.apache.provisionr-0.4.0-incubating-SNAPSHOT/bin/' />
+        <option name='SHARDS_NUMBER' value='3' />
+      </options>
+    </context>
+    <uuid>bd5c5e75-1baf-4449-9f99-3b8251803e91</uuid>
+  </job>
+</joblist>

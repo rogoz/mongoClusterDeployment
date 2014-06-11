@@ -20,14 +20,14 @@ do
 done
 if [ $OPTIND -eq 1 ]; then echo "No options were passed.Is mandatory to use both -s and -m options.Usage example ./createCluster -s <shards number> -m <mongosNumber>";exit 1; fi
 
-# Create shards
-echo "***** Step 1: Creating cluster's shards. *****"
-run -j 1-createShards -p mongoClusterDeployment --follow -- -SHARDS_NUMBER ${SHARDS_NUMBER} -HDD_SIZE ${HDD_SIZE} -PROVISIONR_PATH ${PROVISIONR_PATH}
+# Create replicas
+echo "***** Step 1: Creating cluster's replica members. *****"
+run -j a-createReplicas -p mongoClusterDeployment --follow -- -SHARDS_NUMBER ${SHARDS_NUMBER} -HDD_SIZE ${HDD_SIZE} -PROVISIONR_PATH ${PROVISIONR_PATH}
 echo "***** Step 1: Completed. *****"
 
-# Configure shards
-echo "***** Step 2: Configure cluster's shards. *****"
-run -j 2-configureShards -p mongoClusterDeployment --follow
+# Configure replicas
+echo "***** Step 2: Configure cluster's replicas. *****"
+run -j b-configureReplicas -p mongoClusterDeployment --follow
 echo "***** Step 2: Completed. *****"
 
 # Create mongos

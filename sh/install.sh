@@ -22,8 +22,8 @@ ${RUNDECK_HOME}/tools/bin/rd-project -a create -p oakScalability --project.ssh-k
 
 
 # import jobs
-${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/1-createShards.xml
-${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/2-configureShards.xml
+${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/a-createReplicas.xml
+${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/b-configureReplicas
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/3-createMongos.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/4-configureMongos.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/5-monitorCluster.xml
@@ -32,6 +32,7 @@ ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/i-getTests.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/ii-runTest.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/iii-collectResults.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/init.repository.xml
+
 sleep 5
 kill -9 `ps -ef|grep rundeck|grep -v grep|awk '{print $2}'`
 
