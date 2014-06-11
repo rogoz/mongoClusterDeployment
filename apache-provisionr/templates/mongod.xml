@@ -5,8 +5,7 @@
         <package>mdadm</package>
         <package>lvm2</package>
         <package>libxml2-utils</package>
-	<package>mongodb-10gen</package>
-	
+        <package>mongodb-10gen</package>
     </packages>
     <ports>
         <port>27017</port>
