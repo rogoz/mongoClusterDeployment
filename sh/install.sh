@@ -23,7 +23,7 @@ ${RUNDECK_HOME}/tools/bin/rd-project -a create -p oakScalability --project.ssh-k
 
 # import jobs
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/a-createReplicas.xml
-${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/b-configureReplicas
+${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/b-configureReplicas.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/3-createMongos.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/4-configureMongos.xml
 ${RUNDECK_HOME}/tools/bin/rd-jobs load -f ${RUNDECK_HOME}/Jobs/5-monitorCluster.xml
